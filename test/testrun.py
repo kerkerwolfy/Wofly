@@ -5,17 +5,14 @@ print("x:\n{}".format(x))
 
 from scipy import sparse
 eye = np.eye(4)
-print("\n")
-print("eye:\n{}".format(eye))
+print("\neye:\n{}".format(eye))
 
 sparse_matrix = sparse.csr_matrix(eye)
-print("\n")
-print("sparse CSR matrix:\n{}". format(sparse_matrix))
+print("\nsparse CSR matrix:\n{}". format(sparse_matrix))
 
 y = np.array([[2, 0, 0], [0, 3, 0], [0, 1, 4]])
 sparse_matrix2 = sparse.csr_matrix(y)
-print("\n")
-print("sparse CSR matrix:\n{}". format(sparse_matrix2))
+print("\nsparse CSR matrix:\n{}". format(sparse_matrix2))
 
 import matplotlib.pyplot as plt
 
@@ -25,3 +22,17 @@ y = np.sin(x)
 
 plt.plot(x, y, marker="x")
 plt.show()
+
+from IPython.display import display
+import pandas as pd
+
+data = {'Name': ["John", "Anna", "Peter", "Linda"],
+        "Location": ["New York", "Paris", "Berlin", "London"],
+        "Age": [24, 13, 53, 33]
+        }
+
+data_pandas = pd.DataFrame(data)
+
+display("\n{}".format(data_pandas))
+
+display("\n{}".format(data_pandas[data_pandas.Age > 30]))
