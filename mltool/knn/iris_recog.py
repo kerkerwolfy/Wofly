@@ -1,18 +1,20 @@
 # Meet the data
 from sklearn.datasets import load_iris
 
+
+def _show_dataset_info(dataset):
+    print("Keys of iris_dataset: \n{}".format(dataset.keys()))
+    print("\nDescription: \n{}".format(dataset['DESCR']))
+    print("\nTarget: \n{}".format(dataset['target']))
+    print('\nTarget Names: \n{}'.format(dataset['target_names']))
+    print('\nFeature Names: \n{}'.format(dataset['feature_names']))
+    print('\nData: \n{}'.format(dataset['data']))
+    print('\nShape of Data: {}'.format(dataset['data'].shape))
+    print('Shape of Target: {}'.format(dataset['target'].shape))
+
+
 iris_dataset = load_iris()
-
-print("Keys of iris_dataset: \n{}".format(iris_dataset.keys()))
-
-print("\nDescription: \n{}".format(iris_dataset['DESCR']))
-print("\nTarget: \n{}".format(iris_dataset['target']))
-print('\nTarget Names: \n{}'.format(iris_dataset['target_names']))
-print('\nFeature Names: \n{}'.format(iris_dataset['feature_names']))
-print('\nData: \n{}'.format(iris_dataset['data']))
-
-print('\nShape of Data: {}'.format(iris_dataset['data'].shape))
-print('Shape of Target: {}'.format(iris_dataset['target'].shape))
+_show_dataset_info(dataset=iris_dataset)
 
 # Measuring Success: Training and testing data
 from sklearn.model_selection import train_test_split
